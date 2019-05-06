@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-CC=gcc
+CC=g++
 CDLAGS=-Wall -Werror
 SD=~/Geometry3/src/
 OD=~/Geometry3/build/
