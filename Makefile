@@ -1,5 +1,6 @@
 .PHONY: all clean
 
+VPATH = SRC INCLUD
 CC=g++
 CDLAGS=-Wall -Werror
 SD=~/Geometry3/src/
