@@ -3,9 +3,9 @@
 VPATH = SRC INCLUD
 CC=g++
 CDLAGS=-Wall -Werror
-SD=~/Geometry3/src/
-OD=~/Geometry3/build/
-EXECUTABLE=~/Geometry3/bin/geometry.exe
+SD=src/
+OD=build/
+EXECUTABLE=bin/geometry.exe
 all: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OD)main.o $(OD)circle.o
