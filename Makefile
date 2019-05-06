@@ -1,6 +1,5 @@
 .PHONY: all clean
 
-VPATH = SRC INCLUD
 CC=g++
 CDLAGS=-Wall -Werror
 SD=src/
