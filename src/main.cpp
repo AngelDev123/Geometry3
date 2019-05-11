@@ -3,10 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
-
 int main()
 {
     float x1, y1, r1, x2, y2, r2;
@@ -36,4 +32,4 @@ int main()
         printf("no intersects\n");
 
     return 0;
- }
+}
