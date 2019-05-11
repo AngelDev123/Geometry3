@@ -12,6 +12,6 @@ script:
 notifications:
   email:
     recipients:
-      - ier2000@yandex.ru
+      - zer0fox@yandex.ru
     on_success: never
-on_failure: always 
+on_failure: never 
