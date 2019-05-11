@@ -1,10 +1,17 @@
-language: C
+os: linux
+dist: xenial
+language: cpp
+compiler: gcc
+sudo: false
 
 script:
   - make
-  - git ls-files src/ | xargs clang-format -i&& git diff --exit-code
-
- compiler: gcc
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code  
 
 
- dist: xenial 
+notifications:
+  email:
+    recipients:
+      - ier2000@yandex.ru
+    on_success: never
+on_failure: always 

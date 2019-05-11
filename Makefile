@@ -1,19 +1,21 @@
-.PHONY: all clean
+CC = g++
+EXECUTABLE = bin/main.out
+CFLAGS = -Wall -Werror -c -MD
+SOURCES = $(wildcard $(addprefix src/,*.cpp))
+OBJECTS = $(patsubst $(addprefix src/, %.cpp),$(addprefix build/, %.o),$(wildcard $(addprefix src/, *.cpp)))
+DEPENDENCIES = $(patsubst $(addprefix build/, %.o), $(addprefix build/, %.d), $(wildcard $(addprefix build/, *.o)))
 
-CC=g++
-CDLAGS=-Wall -Werror
-SD=~/Geometry3/src/
-OD=~/Geometry3/build/
-EXECUTABLE=~/Geometry3/bin/geometry.exe
-all: $(EXECUTABLE)
+all : $(SOURCES) $(EXECUTABLE)
 
-$(EXECUTABLE): $(OD)main.o $(OD)circle.o
-	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(OD)main.o $(OD)circle.o -lm
-$(OD)main.o: $(SD)main.cpp
-	$(CC) $(CFLAGS) -c -o $(OD)main.o $(SD)main.cpp -lm
-$(OD)circle.o: $(SD)circle.cpp
-	$(CC) $(CFLAGS) -c -o $(OD)circle.o $(SD)circle.cpp -lm
+$(EXECUTABLE) : $(OBJECTS)
+	$(CC) $^ -o $@ -std=c++11
+
+build/%.o : src/%.cpp
+	$(CC) $(CFLAGS) $< -o $@ -std=c++11
+
+.PHONY : clean
 clean:
-	rm -rf $(EXECUTABLE) $(OD)*.o	
-	
+	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES) 
+
+
 
