@@ -12,6 +12,6 @@ script:
 notifications:
   email:
     recipients:
-      - zer0fox@yandex.ru
+      - kill-20-20@mail.ru
     on_success: never
 on_failure: never 
